@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details</title>
+    <meta name="description" content="">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'plugin/nice-select/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'plugin/OwlCarousel2-2.3.4/dist/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugin/OwlCarousel2-2.3.4/dist/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugin/nouislider/nouislider.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<!-- Header Section Start -->
+    <header>
+        <div class="top-header">
+            <div class="container">
+                <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 d-none d-sm-none p-0 d-md-none d-lg-block">
+                            <ul class="list-unstyled m-0 d-flex p-0 top-header-menu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 p-0 d-none d-sm-none d-md-none d-lg-flex justify-content-end">
+                            <ul class="list-unstyled m-0 d-flex p-0 top-header-menu">
+                                <li>
+                                    <div class="country">
+                                        <select class="nice-option">
+                                            <option value="USD">USD</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="INR">INR</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="lang">
+                                        <select class="nice-option">
+                                            <option value="English">English</option>
+                                            <option value="Hindi">Hindi</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+            </div> 
+        </div>
+        <div class="middle-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-block d-sm-block d-md-block d-lg-none">
+                        <button class="navbar-toggler border-0 collapsed" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#navbar-default" aria-controls="navbar-default"
+                            aria-label="Toggle navigation">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon-hamburger" fill="none" viewBox="0 0 18 16" width="20px" height="20px">
+                                <path d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z" fill="currentColor">
+                            </path></svg>
+                        </button>
+                    </div>
+                    <div class="col-8 col-sm-8 col-md-8 col-lg-3 order-1 order-lg-1 d-flex justify-content-start">
+                    <a href="index.html">
+                        <img src="{% static 'images/logo.png' %}" alt="logo" width="180" height="auto" sizes="(max-width: 360px) 50vw, 180px">
+                    </a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 order-3 order-lg-2 mt-3 mt-lg-0 d-none d-lg-block">
+                        <div class="input-group search-container">
+                            <input type="text" class="form-control header-search" placeholder="Search">
+                            <select id="searchSelect" class="form-select flex-shrink-0">
+                                <option>All categories</option>
+                                <option>Fruits & Vegetables</option>
+                                <option>Notebooks</option>
+                                <option>Smartphones</option>
+                                <option>TV, Monitors</option>
+                                <option>Cameras</option>
+                                <option>Headphones</option>
+                                <option>Headsets</option>
+                                <option>Printers</option>
+                                <option>Consoles</option>
+                                <option>Games</option>
+                                <option>Storage</option>
+                            </select>
+                            <span class="input-group-text text-black bg-primary">
+                                <svg aria-hidden="true" fill="none" focusable="false" width="24" height="24" class="icon-search" viewBox="0 0 24 24"><path d="M10.364 3a7.364 7.364 0 1 0 0 14.727 7.364 7.364 0 0 0 0-14.727Z" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10"></path><path d="M15.857 15.858 21 21.001" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"></path></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 order-2 order-lg-3 d-flex justify-content-end">
+                    <div>
+                        <div class="list-inline  d-flex mt-2">
+                            <div class="list-inline-item d-none d-lg-block">
+                                <a href="login.html" class="text-muted">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-account" width="25" height="25" viewBox="0 0 24 24"  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                </a>
+                            </div>
+                            <div class="list-inline-item d-none d-lg-block">
+                                <a href="wishlist.html" class="text-muted position-relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-wishlist" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge badge-count rounded-pill bg-primary">
+                                        5
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="list-inline-item d-block d-lg-none">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
+                                    <svg aria-hidden="true" fill="none" focusable="false" width="24" height="24" class="icon-search" viewBox="0 0 24 24"><path d="M10.364 3a7.364 7.364 0 1 0 0 14.727 7.364 7.364 0 0 0 0-14.727Z" stroke="#000" stroke-width="1.5" stroke-miterlimit="10"></path><path d="M15.857 15.858 21 21.001" stroke="#000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"></path></svg>
+                                </a>
+                                <div class="search-container">
+                                    <!-- Mobile, table Search Modal -->
+                                    <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                        <div class="modal-content rounded-0">
+                                            <div class="modal-body">
+                                                    <div class="row">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control header-search" placeholder="Search">
+                                                        <select id="searchSelect" class="form-select flex-shrink-0">
+                                                            <option>All categories</option>
+                                                            <option>Fruits & Vegetables</option>
+                                                            <option>Notebooks</option>
+                                                            <option>Smartphones</option>
+                                                            <option>TV, Monitors</option>
+                                                            <option>Cameras</option>
+                                                            <option>Headphones</option>
+                                                            <option>Headsets</option>
+                                                            <option>Printers</option>
+                                                            <option>Consoles</option>
+                                                            <option>Games</option>
+                                                            <option>Storage</option>
+                                                        </select>
+                                                        <span class="input-group-text text-black bg-primary">
+                                                            <svg aria-hidden="true" fill="none" focusable="false" width="24" height="24" class="icon-search" viewBox="0 0 24 24"><path d="M10.364 3a7.364 7.364 0 1 0 0 14.727 7.364 7.364 0 0 0 0-14.727Z" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10"></path><path d="M15.857 15.858 21 21.001" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"></path></svg>
+                                                        </span>
+                                                    </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                            <div class="list-inline-item me-3 me-lg-0">
+                                <a class="text-muted position-relative" href="cart.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-cart" width="25" height="25" viewBox="0 0 24 24"  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge badge-count rounded-pill bg-primary">
+                                        1
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- Navs -->
+        <div class="header-bottom">
+            <nav class="navbar navbar-expand-lg navbar-light navbar-default py-0 px-0" aria-label="Offcanvas navbar large">
+            <div class="container">
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="navbar-default"
+                    aria-labelledby="navbar-defaultLabel">
+                    <div class="offcanvas-header">
+                        <a href="login.html" class="text-muted">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-account" width="25" height="25" viewBox="0 0 24 24"  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <span class="ms-2 fw-semibold">Login & Signup</span>
+                        </a>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="d-block d-lg-none mb-4">
+                            <a class="btn btn-primary w-100 d-flex justify-content-center align-items-center collapsed"
+                                data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                <span class="me-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" class="icon icon-element">
+                                        <path d="M22 8.52V3.98C22 2.57 21.36 2 19.77 2H15.73C14.14 2 13.5 2.57 13.5 3.98V8.51C13.5 9.93 14.14 10.49 15.73 10.49H19.77C21.36 10.5 22 9.93 22 8.52ZM22 19.77V15.73C22 14.14 21.36 13.5 19.77 13.5H15.73C14.14 13.5 13.5 14.14 13.5 15.73V19.77C13.5 21.36 14.14 22 15.73 22H19.77C21.36 22 22 21.36 22 19.77ZM10.5 8.52V3.98C10.5 2.57 9.86 2 8.27 2H4.23C2.64 2 2 2.57 2 3.98V8.51C2 9.93 2.64 10.49 4.23 10.49H8.27C9.86 10.5 10.5 9.93 10.5 8.52ZM10.5 19.77V15.73C10.5 14.14 9.86 13.5 8.27 13.5H4.23C2.64 13.5 2 14.14 2 15.73V19.77C2 21.36 2.64 22 4.23 22H8.27C9.86 22 10.5 21.36 10.5 19.77Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                                All Department
+                            </a>
+                            <div class="mt-2 collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    <ul class="mb-0 list-unstyled">
+                                        <li><a class="dropdown-item" href="shop.html">Laptop Accessories</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Mobile Accessories</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Camera Accessories</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Games</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Smart Wearables</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Smart Home Automation</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Tablets</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row w-100 mx-0 py-0 p-0">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-3 py-0 px-0 mx-0">
+                                <div class="dropdown d-none d-lg-block categories-section-lg">
+                                    <button class="btn w-100 text-nowrap department-all d-flex" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <svg viewBox="0 0 32 32" class="mt-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20"  fill="#000">
+                                            <path d="M17.5,11h-3a2,2,0,0,1-2-2V6a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2V9A2,2,0,0,1,17.5,11Z"/>
+                                            <path d="M9,11H6A2,2,0,0,1,4,9V6A2,2,0,0,1,6,4H9a2,2,0,0,1,2,2V9A2,2,0,0,1,9,11Z"/>
+                                            <path d="M26,11H23a2,2,0,0,1-2-2V6a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2V9A2,2,0,0,1,26,11Z"/>
+                                            <path d="M17.5,28h-3a2,2,0,0,1-2-2V23a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2v3A2,2,0,0,1,17.5,28Z"/>
+                                            <path d="M9,28H6a2,2,0,0,1-2-2V23a2,2,0,0,1,2-2H9a2,2,0,0,1,2,2v3A2,2,0,0,1,9,28Z"/>
+                                            <path d="M26,28H23a2,2,0,0,1-2-2V23a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2v3A2,2,0,0,1,26,28Z"/>
+                                            <path d="M17.5,19.5h-3a2,2,0,0,1-2-2v-3a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2v3A2,2,0,0,1,17.5,19.5Z"/>
+                                            <path d="M9,19.5H6a2,2,0,0,1-2-2v-3a2,2,0,0,1,2-2H9a2,2,0,0,1,2,2v3A2,2,0,0,1,9,19.5Z"/>
+                                            <path d="M26,19.5H23a2,2,0,0,1-2-2v-3a2,2,0,0,1,2-2h3a2,2,0,0,1,2,2v3A2,2,0,0,1,26,19.5Z"/>
+                                        </svg>
+                                        <span class="ms-4">All Department</span>
+                                    </button>
+                                    <ul class="dropdown-menu p-0 m-0 custom-dropdown" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="shop.html">Laptop Accessories</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Mobile Accessories</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Camera Accessories</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Games</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Smart Wearables</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Smart Home Automation</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Tablets</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-9 overflow-x-auto px-0">
+                                <div class="menu-item-list">
+                                    <ul class="navbar-nav align-items-start align-items-lg-center  py-0">
+                                        <li class="nav-item dropdown me-0 me-lg-2">
+                                            <a class="nav-link " href="index.html">Home</a>
+                                        </li>
+                                        <li class="nav-item dropdown  me-0 me-lg-2">
+                                            <a class="nav-link text-nowrap" href="shop.html">Today Deals</a>
+                                        </li>
+                                        <li class="nav-item dropdown me-0 me-lg-2">
+                                            <a class="nav-link text-nowrap" href="shop.html">Summer Seal</a>
+                                        </li>
+                                        <li class="nav-item dropdown me-0 me-lg-2">
+                                            <a class="nav-link text-nowrap" href="shop.html">Shop</a>
+                                        </li>
+                                        <li class="nav-item dropdown dropdown-fullwidth me-0 me-lg-2">
+                                            <a class="nav-link dropdown-toggle text-nowrap" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">Mega menu</a>
+                                            <div class="dropdown-menu pb-0">
+                                                <div class="row p-2 p-lg-4">
+                                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                                                        <h6 class="text-primary ps-3">Laptop Accessories</h6>
+                                                        <a class="dropdown-item" href="shop.html">Mouse</a>
+                                                        <a class="dropdown-item" href="shop.html">Keyboard</a>
+                                                        <a class="dropdown-item" href="shop.html">USB</a>
+                                                        <a class="dropdown-item" href="shop.html">Data Cards</a>
+                                                        <a class="dropdown-item" href="shop.html">Router</a>
+                                                        <a class="dropdown-item" href="shop.html">Battery</a>
+                                                        <a class="dropdown-item" href="shop.html">Adapter</a>
+                                                        <a class="dropdown-item" href="shop.html">UPS</a>
+                                                    </div>
+                                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                                                        <h6 class="text-primary ps-3">Mobile Accessories</h6>
+                                                        <a class="dropdown-item" href="shop.html">Screen Guards</a>
+                                                        <a class="dropdown-item" href="shop.html">Plain Cases</a>
+                                                        <a class="dropdown-item" href="shop.html">Mobile Cables</a>
+                                                        <a class="dropdown-item" href="shop.html">Mobile Charger</a>
+                                                        <a class="dropdown-item" href="shop.html">Camera Lens</a>
+                                                        <a class="dropdown-item" href="shop.html">Mobile Flash</a>
+                                                        <a class="dropdown-item" href="shop.html">Power Bank</a>
+                                                        <a class="dropdown-item" href="shop.html">Mobile USB</a>
+                                                    </div>
+                                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                                                        <h6 class="text-primary ps-3">Camera Accessories</h6>
+                                                        <a class="dropdown-item" href="shop.html">Instant Camera</a>
+                                                        <a class="dropdown-item" href="shop.html">Drone</a>
+                                                        <a class="dropdown-item" href="shop.html">DSLR</a>
+                                                        <a class="dropdown-item" href="shop.html">Flashes</a>
+                                                        <a class="dropdown-item" href="shop.html">Sports & Action</a>
+                                                        <a class="dropdown-item" href="shop.html">Camera Lens</a>
+                                                        <a class="dropdown-item" href="shop.html">Camera tripods</a>
+                                                        <a class="dropdown-item" href="shop.html">Point & Shoot</a>
+                                                    </div>
+                                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                                                        <h6 class="text-primary ps-3">Camera Accessories</h6>
+                                                        <a class="dropdown-item" href="shop.html">Instant Camera</a>
+                                                        <a class="dropdown-item" href="shop.html">Drone</a>
+                                                        <a class="dropdown-item" href="shop.html">DSLR</a>
+                                                        <a class="dropdown-item" href="shop.html">Flashes</a>
+                                                        <a class="dropdown-item" href="shop.html">Sports & Action</a>
+                                                        <a class="dropdown-item" href="shop.html">Camera Lens</a>
+                                                        <a class="dropdown-item" href="shop.html">Camera tripods</a>
+                                                        <a class="dropdown-item" href="shop.html">Point & Shoot</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown dropdown-fullwidth me-0 me-lg-2">
+                                            <a class="nav-link dropdown-toggle text-nowrap" href="#" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">Pages</a>
+                                            <div class="dropdown-menu pb-0">
+                                                <div class="row p-2 p-lg-4">
+                                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                                                        <h6 class="text-primary ps-3">Shop</h6>
+                                                        <a class="dropdown-item" href="shop.html">Shop Page - Filter</a>
+                                                        <a class="dropdown-item" href="shop-single.html">Shop Single</a>
+                                                        <a class="dropdown-item" href="wishlist.html">Shop Wishlist</a>
+                                                        <a class="dropdown-item" href="cart.html">Shop Cart</a>
+                                                        <a class="dropdown-item" href="checkout.html">Shop Checkout</a>
+                                                    </div>
+                                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                                                        <h6 class="text-primary ps-3">Account</h6>
+                                                        <a class="dropdown-item" href="login.html">Sign in</a>
+                                                        <a class="dropdown-item" href="signup.html">Signup</a>
+                                                        <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+                                                        <a class="dropdown-item" href="account.html">My Account</a>
+                                                    </div>
+                                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                                                        <h6 class="text-primary ps-3">Blog</h6>
+                                                        <a class="dropdown-item" href="blog.html">Blog</a>
+                                                        <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+                                                    </div>
+                                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
+                                                        <h6 class="text-primary ps-3">Other</h6>
+                                                        <a class="dropdown-item" href="about.html">About us</a>
+                                                        <a class="dropdown-item" href="contact.html">Contact</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </nav>
+        </div>
+        <!-- Navs -->
+    </header>
+<!-- Header Section End -->
+
+     <!-- Menu Section -->
+     <div class="container-fluid mt-2 mt-sm-2 mt-md-2 mt-lg-4">
+      <div class="d-block d-sm-block d-md-block d-lg-flex">
+          <div class="container-left">
+              <div class="category-menu" style="display: none;">
+                  <div class="menu-title d-none d-sm-none d-md-none d-lg-block"><i class="fas fa-bars me-2"></i></i>Jewelry Collections</div>
+                  <ul class="list-unstyled">
+                      <li>
+                          <a href="#" class="more-menu">Accessory Types</a>
+                          <ul class="list-unstyled">
+                              <li>
+                                  <a href="#" class="more-menu">Chokers</a>
+                                  <ul class="list-unstyled">
+                                      <li><a href="#">Gold Choker</a></li>
+                                      <li><a href="#">Silver Choker</a></li>
+                                  </ul>
+                              </li>
+                              <li><a href="#">Pendants</a></li>
+                              <li><a href="#">Chains</a></li>
+                              <li><a href="#">Collar Necklaces</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="#">Pearls</a></li>
+                      <li><a href="#">Silver Pieces</a></li>
+                      <li>
+                          <a href="#" class="more-menu">Chain Jewelry</a>
+                          <ul class="list-unstyled">
+                              <li><a href="#">Pendants</a></li>
+                              <li><a href="#">Bracelets</a></li>
+                              <li><a href="#">Belly Chains</a></li>
+                              <li><a href="#">Nose Rings</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="#">Cufflinks</a></li>
+                      <li><a href="#">Black Cardamom Jewelry</a></li>
+                      <li><a href="#">Fancy Earrings</a></li>
+                      <li><a href="#">Platinum Pieces</a></li>
+                      <li><a href="#">Gold Items</a></li>
+                      <li><a href="#">Toe Rings</a></li>
+                      <li><a href="#">Featured Items</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="container-right"></div>
+      </div>
+  </div>
+  <!-- /Menu Section End -->
+    <!-- breadcrumbs -->
+      <nav class="container mt-4 mt-sm-4 mt-md-4 mt-lg-3 d-flex flex-wrap align-items-center gap-2 px-3">
+        <div class="d-flex align-items-center gap-2">
+          <a href="index.html">
+            <svg class="text-primary" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg">
+              <path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path>
+            </svg>
+          </a>
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="text-muted ms-2" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+        <div class="d-flex align-items-center gap-2 ms-1">
+          <a class="text-muted text-decoration-none pointer-events-none" href="#">Blog Details</a>
+        </div>
+      </nav>
+    <!-- end breadcrumbs -->
+    
+    <section class="blog-section">
+        <div class="container">
+            <div class="row mt-50">
+                <div class="col-lg-8">
+                    <article class="mb-4 bg-white p-1 p-lg-4">
+                        <h1 class="mb-4 font-weight-bold">
+                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, voluptate?
+                        </h1>
+                        <div class="mb-4 d-flex flex-wrap align-items-center">
+                          <div class="me-3 mb-2 mb-sm-2 mb-md-0 mb-lg-0 d-flex align-items-center border-right pr-3">
+                            <svg class="text-primary" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"></path>
+                            </svg>
+                            <span class="text-uppercase ms-2">114 views</span>
+                          </div>
+                          <div class="me-3 mb-2 mb-sm-2 mb-md-0 mb-lg-0 d-flex align-items-center border-right pr-3">
+                            <svg class="text-primary" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M532 386.2c27.5-27.1 44-61.1 44-98.2 0-80-76.5-146.1-176.2-157.9C368.3 72.5 294.3 32 208 32 93.1 32 0 103.6 0 192c0 37 16.5 71 44 98.2-15.3 30.7-37.3 54.5-37.7 54.9-6.3 6.7-8.1 16.5-4.4 25 3.6 8.5 12 14 21.2 14 53.5 0 96.7-20.2 125.2-38.8 9.2 2.1 18.7 3.7 28.4 4.9C208.1 407.6 281.8 448 368 448c20.8 0 40.8-2.4 59.8-6.8C456.3 459.7 499.4 480 553 480c9.2 0 17.5-5.5 21.2-14 3.6-8.5 1.9-18.3-4.4-25-.4-.3-22.5-24.1-37.8-54.8zm-392.8-92.3L122.1 305c-14.1 9.1-28.5 16.3-43.1 21.4 2.7-4.7 5.4-9.7 8-14.8l15.5-31.1L77.7 256C64.2 242.6 48 220.7 48 192c0-60.7 73.3-112 160-112s160 51.3 160 112-73.3 112-160 112c-16.5 0-33-1.9-49-5.6l-19.8-4.5zM498.3 352l-24.7 24.4 15.5 31.1c2.6 5.1 5.3 10.1 8 14.8-14.6-5.1-29-12.3-43.1-21.4l-17.1-11.1-19.9 4.6c-16 3.7-32.5 5.6-49 5.6-54 0-102.2-20.1-131.3-49.7C338 339.5 416 272.9 416 192c0-3.4-.4-6.7-.7-10C479.7 196.5 528 238.8 528 288c0 28.7-16.2 50.6-29.7 64z"></path>
+                            </svg>
+                            <span class="text-uppercase ms-2">3 comments</span>
+                          </div>
+                          <div class="d-flex mb-2 mb-sm-2 mb-md-0 mb-lg-0 align-items-center">
+                            <svg class="text-primary" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="416" height="384" x="48" y="80" fill="none" stroke-linejoin="round" stroke-width="32" rx="48"></rect>
+                              <circle cx="296" cy="232" r="24"></circle>
+                              <circle cx="376" cy="232" r="24"></circle>
+                              <circle cx="296" cy="312" r="24"></circle>
+                              <circle cx="376" cy="312" r="24"></circle>
+                              <circle cx="136" cy="312" r="24"></circle>
+                              <circle cx="216" cy="312" r="24"></circle>
+                              <circle cx="136" cy="392" r="24"></circle>
+                              <circle cx="216" cy="392" r="24"></circle>
+                              <circle cx="296" cy="392" r="24"></circle>
+                              <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M128 48v32m256-32v32"></path>
+                              <path fill="none" stroke-linejoin="round" stroke-width="32" d="M464 160H48"></path>
+                            </svg>
+                            <span class="text-uppercase ms-2">Nov 14, 2024</span>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="blog-desc">
+                          <figure class="mb-3">
+                            <img class="img-fluid rounded" src="{% static 'images/blog-1.png' %}" alt="">
+                          </figure>
+                          <p class="mb-3">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, earum eum? Repellat vero minus laudantium earum soluta quos alias molestiae voluptatum ipsa in, pariatur consequuntur sint accusantium quia sequi. Sequi?
+                          </p>
+                          <p class="mb-3">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis, illum. Nulla ex unde molestiae sunt eos doloremque! Esse rem labore laborum magnam commodi doloribus voluptatum voluptates natus, cum eos rerum. Aperiam nulla distinctio eaque eos assumenda aspernatur dicta veritatis dignissimos.
+                          </p>
+                          <p class="mb-3">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque neque corporis architecto quaerat, perspiciatis nulla velit, consequatur eveniet molestias ullam voluptates amet consequuntur ut aspernatur nam reprehenderit in nesciunt beatae ab necessitatibus repudiandae. Qui odit expedita veritatis voluptate, voluptatum sequi dolorum commodi corrupti reprehenderit fuga corporis atque ipsa ullam cupiditate?
+                          </p>
+                          <blockquote class="quote">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius debitis provident consectetur consequuntur quod, soluta in! Fugiat soluta nihil eveniet.
+                          </blockquote>
+                          <p class="mb-3">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo recusandae maxime ipsum tempore illum laborum nostrum aliquid, molestiae eos iure ut possimus non in earum magnam quidem maiores consectetur corporis praesentium nisi aperiam culpa provident. Tenetur necessitatibus itaque dicta pariatur?
+                          </p>
+                          <p class="mb-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aliquam ullam quas assumenda labore ea repellat voluptate nostrum quidem itaque architecto, dolorum pariatur magnam nam mollitia impedit rerum dicta earum quo debitis alias magni dignissimos nisi amet! Dolorem, excepturi dolorum.
+                          </p>
+                          <p class="mb-3">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium praesentium non aut, sit perspiciatis saepe sunt esse rerum, nostrum architecto laboriosam et, necessitatibus minus! Aliquid dolore non necessitatibus mollitia fugiat animi dolorem pariatur perspiciatis eius vel nesciunt deserunt inventore, sunt porro quidem voluptatum magni neque officiis rem. Eveniet, sunt assumenda?
+                          </p>
+                        </div>
+                      </article>
+
+                      <div class="comment-section">
+                           <div class="comment-box">
+                            <form class="mb-4">
+                              <div class="position-relative mb-4 w-100 overflow-hidden rounded-lg bg-white pr-3">
+                                <textarea
+                                  id="comment"
+                                  class="form-control text-muted"
+                                  placeholder="Comment"
+                                  required
+                                  autocomplete="off"
+                                ></textarea>
+                              </div>
+                              <button class="btn btn-primary font-weight-bold px-4 py-2" type="submit">
+                                Post comment
+                              </button>
+                            </form>
+                           </div>
+                           <div class="comment-title">
+                             <h2>Comment</h2>
+                           </div>
+                           <div class="comment-lists">
+                            <div class="mt-4 d-flex align-items-start">
+                              <div>
+                                <img class="d-none d-sm-block me-3 rounded-circle shadow-sm" style="height: 56px; width: 56px; overflow: hidden;" src="{% static 'images/client/1.png' %}" alt="profile_logo">
+                              </div>
+                              <div>
+                                <div class="d-flex align-items-center mb-1">
+                                  <a class="font-weight-bold text-primary" href="#">Alina</a>
+                                  <span class="mx-2">·</span>
+                                  <span class="text-muted small">15 Nov. 09:21pm</span>
+                                </div>
+                                <p class="mb-2">
+                                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, est ratione earum labore, iste soluta error repudiandae, illo sapiente ipsam omnis maxime voluptates quod quo laudantium. Doloremque qui natus voluptas.
+                                </p>
+                                <div class="d-flex align-items-center">
+                                  <div class="d-flex align-items-center text-muted me-3" style="cursor: pointer;">
+                                    <svg class="h-4 w-4" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                      <path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path>
+                                    </svg>
+                                    <span class="ms-1">Reply</span>
+                                  </div>
+                                  <div class="d-flex align-items-center text-muted" style="cursor: pointer;">
+                                    <svg class="h-4 w-4" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    <span class="ms-1">Edit</span>
+                                  </div>
+                                </div>
+                                <div class="mt-4 d-flex align-items-start">
+                                  <div>
+                                    <img class="d-none d-sm-block me-3 rounded-circle shadow-sm" style="height: 56px; width: 56px; overflow: hidden;" src="{% static 'images/client/2.png' %}" alt="profile_logo">
+                                  </div>
+                                  <div>
+                                    <div class="d-flex align-items-center mb-1">
+                                      <a class="font-weight-bold text-primary" href="#">Johne Deo</a>
+                                      <span class="mx-2">·</span>
+                                      <span class="text-muted small">Just now</span>
+                                    </div>
+                                    <small class="d-flex align-items-center text-muted mb-2">
+                                      <svg class="h-4 w-4" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                        <path d="M7 8V5l-7 7 7 7v-3l-4-4 4-4zm6 1V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path>
+                                      </svg>
+                                      <span class="ms-1">Responding to</span>
+                                      <a class="ms-1 text-primary" href="#">Alina</a>
+                                    </small>
+                                    <p class="mb-2">
+                                      Alina, Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ex possimus, unde totam nulla exercitationem esse perspiciatis accusantium porro eligendi?
+                                    </p>
+                                    <div class="d-flex align-items-center">
+                                      <div class="d-flex align-items-center text-muted" style="cursor: pointer;">
+                                        <svg class="h-4 w-4" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                          <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                          <path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"></path>
+                                        </svg>
+                                        <span class="ms-1">Reply</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                           </div>
+                      </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar-wrap mt-5 mt-sm-5 mt-md-5 mt-lg-1">
+                        <div class="sidebar-blog search rounded-0 card p-4 mb-3 border-0">
+                            <input type="text" class="form-control rounded-0 py-2" placeholder="search">
+                            <a href="#" class="btn btn-primary mt-3 rounded-0">Search</a>
+                        </div>
+                        <div class="sidebar-blog latest-post card rounded-0 border-0 p-4 mb-3">
+                            <h5>Latest Posts</h5>
+                            <div class="d-flex border-bottom py-3 latest-post-item">
+                                <a href="#"><img class="me-4" src="{% static 'images/blog-2.png' %}" width="87" height="65" alt=""></a>
+                                <div class="ms-2">
+                                    <h6 class="mb-2"><a href="#">Lorem ipsum dolor sit amet</a></h6>
+                                    <span class="text-sm text-muted">03 Jan 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex border-bottom py-3 latest-post-item">
+                                <a href="#"><img class="me-4" src="{% static 'images/blog-3.png' %}" width="87"  height="65" alt=""></a>
+                                <div class="ms-2">
+                                    <h6 class="my-2"><a href="#">Lorem ipsum dolor sit amet</a></h6>
+                                    <span class="text-sm text-muted">03 Jan 2024</span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex py-3 latest-post-item">
+                                <a href="#"><img class="me-4" src="{% static 'images/blog-4.png' %}" width="87" height="65" alt=""></a>
+                                <div class="ms-2">
+                                    <h6 class="my-2"><a href="#">Lorem ipsum dolor sit amet</a></h6>
+                                    <span class="text-sm text-muted">03 Jan 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-blog bg-white rounded-0 tags p-4 mb-3">
+                            <h5 class="mb-4">Tags</h5>
+                            <a href="#">Mobile</a>
+                            <a href="#">Laptop</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Toys</a>
+                            <a href="#">Kids</a>
+                            <a href="#">Women</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+   <footer class="mt-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-md-0">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="footer_logo">
+                                <img loading="lazy" src="{% static 'images/logo.png' %}" class="logo" alt="easy shop">
+                            </div>
+                            <div class="mt-4">
+                                <p>Lorem ipsum, or lipsum as it is sometimes kno wn, is dummy text used in laying out print, gra phic or web designs the passage.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="footer_newsletter pe-lg-5">
+                                <h4 class="text-uppercase">Newsletter</h4>
+                                <div class="input-group">
+                                    <input id="searchInput" class="form-control w-50" type="text" placeholder="Your email address">
+                                    <button type="button" class="btn btn-primary bg-gradient">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-3 mb-md-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="footer_menu">
+                                <h4 class="footer_title">My Account</h4>
+                                <ul class="m-0 p-0 list-unstyled">
+                                    <li><a href="#">Orders</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">Track Order</a></li>
+                                    <li><a href="#">Manage Account</a></li>
+                                </ul>
+                               
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="footer_menu">
+                                <h4 class="footer_title">Information</h4>
+                                <ul class="m-0 p-0 list-unstyled">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Return Policy</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer_download">
+                        <div class="row">
+                            <div class="col-lg-6 col-lg-12">
+                                <h4 class="footer_title">Contact</h4>
+                                <div class="footer_contact">
+                                    <p>
+                                        <span class="icn"><i class="fa-solid fa-location-dot"></i></span>
+                                        Widgetify Inc. 456 Gadget Avenue <br>
+                                        Techtown, TX 67890 <br>
+                                        United States of America
+                                    </p>
+                                    <p class="phn">
+                                        <span class="icn"><i class="fa-solid fa-phone"></i></span>
+                                        (987) 654-3210, (555) 123-4567
+                                    </p>
+                                    <p class="eml">
+                                        <span class="icn"><i class="fa-solid fa-envelope"></i></span>
+                                        info@example.com
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="footer_social col-lg-6 col-lg-12">
+                                <div class="footer_icon d-flex mt-1">
+                                    <a href="#" class="facebook pe-3"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#" class="twitter pe-3"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" class="instagram pe-3"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'plugin/nice-select/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'plugin/OwlCarousel2-2.3.4/dist/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'plugin/nouislider/nouislider.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
